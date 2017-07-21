@@ -16,6 +16,7 @@ namespace PPM {
     public:
         PPMImage() = delete;
         PPMImage(int width, int height);
+        PPMImage(int width, int height, unsigned char red, unsigned char green, unsigned char blue);
         void SetPixel(unsigned int x, unsigned int y, unsigned char red, unsigned char green, unsigned char blue);
         std::string ToString() const;
         void SaveToFile(const std::string& file) const;

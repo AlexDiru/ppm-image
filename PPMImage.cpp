@@ -1,13 +1,16 @@
 #include "PPMImage.h"
 
 namespace PPM {
+    PPMImage::PPMImage(int width, int height) : PPMImage::PPMImage(width, height, 0, 0, 0) {
 
-    PPMImage::PPMImage(int width, int height) {
+    }
+
+    PPMImage::PPMImage(int width, int height, unsigned char red, unsigned char green, unsigned char blue) {
         Width = width;
         Height = height;
-        PixelsR.resize(Width * Height, 0);
-        PixelsG.resize(Width * Height, 0);
-        PixelsB.resize(Width * Height, 0);
+        PixelsR.resize(Width * Height, red);
+        PixelsG.resize(Width * Height, green);
+        PixelsB.resize(Width * Height, blue);
     }
 
     void PPMImage::SetPixel(unsigned int x, unsigned int y, unsigned char red, unsigned char green, unsigned char blue) {
